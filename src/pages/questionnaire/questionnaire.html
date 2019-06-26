@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar style="text-align: center">
+    <ion-title><h1>{{title}}</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides paginationType="progress" #slides pager>
+    <ion-slide *ngFor="let n of Questions">
+      <h2 style="color: white">{{n.question}}</h2>
+        <ion-list>
+          <ion-item style="background-color:transparent;"  *ngFor="let b of n.options">
+            <button style="height: 50px;background-color: transparent;border: 3px solid #E53779" ion-button full (click)="getAns(b.option)"> <h1>{{b.option}}</h1> </button>
+          </ion-item>
+        </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <button ion-button style="height: 50px;" (click)="showTotal()" round>Submit</button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

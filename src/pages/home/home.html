@@ -1,0 +1,33 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+</style>
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title style="text-align: center">
+      PopQuiz<ion-icon name="bulb"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div class="box-1" style="text-align: center">
+      <h1 style="font-family: 'Special Elite', cursive;color:white;text-shadow: 2px 2px #E53779"> Take your Quiz
+        today!
+      </h1>
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 *ngFor='let item of Categories'>
+        <ion-list>
+          <ion-item style="background-color: transparent;border: none">
+            <button style="height: 50px;background-color: transparent;border: 3px solid #E53779;" (click)="goToQuestionsPAge(item.categoryName, item.questions)" ion-button block>
+              <h1 style="font-family: 'Special Elite', cursive;color:white">{{item.categoryName}}</h1>
+            </button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
